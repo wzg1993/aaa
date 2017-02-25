@@ -11,7 +11,7 @@ function Slider(options){//把对象封装到参数里
 	if (!options) {
 		throw new Error("请传入参数")
 	} else if(!options.oDiv){
-		throw new Error("请给oDiv一个di")
+		throw new Error("请给oDiv一个div")
 	}else if (!options.imgs) {
 		throw new Error("请传入要显示的图片数组")
 	}else if (!options.hrefs) {
@@ -202,7 +202,28 @@ Slider.prototype.changeSlider=function(p){
 }
 
 
+//以下是使用时的代码
+			//设置你所需要的参数
+			var options = {};
+			options.oDiv=document.getElementById("banner");
+			var imgs = ["http://m.tuniucdn.com/fb2/t1/G2/M00/62/64/Cii-TFhTkbaIPZV8AAKXb1YJLhAAAFnKAGOOuwAApeH83.jpeg",
+"http://m.tuniucdn.com/fb2/t1/G2/M00/5E/16/Cii-TlhR7fyIQhhMAAK_N7Aa1jgAAFjCQIAr8QAAr9P84.jpeg",
+"http://m.tuniucdn.com/fb2/t1/G2/M00/6A/7F/Cii-T1hXoPuITf6MAAFLq0OclmwAAFveQFLizsAAUvD07.jpeg",
+"http://m.tuniucdn.com/fb2/t1/G2/M00/63/25/Cii-TlhTy06IHKCFAAL6jJD3GL0AAFoAwGsPRYAAvqk97.jpeg",
+"https://m.tuniucdn.com/fb2/t1/G2/M00/78/62/Cii-T1hcvgaIKgDKAALxTWvcrJgAAF7hwLy-1UAAvFl64.jpeg"];//传入所需图片的地址
+			options.imgs = imgs;
+			options.hrefs=["#","#","#","#","#"];
+			options.height = "440px";
+			options.width = "100%";
+			options.ulName = "slider-ul";//轮播图ul的样式类名字
+			options.liName = "slider-li";//轮播图li的样式类名字
+			options.navName = "nav";//小圆点的样式类名字
+			options.navActive = "active";//选中圆点时的样式 对应当前图片的圆点的样式
+			options.btnName = "btn";
+			options.time= 3000;//传入轮播时间间隔
 
+			
+			var slider = new Slider(options);
 
 
 
